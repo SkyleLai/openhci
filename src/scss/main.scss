@@ -148,6 +148,17 @@ hr {
       position: right top;
     }
   }
+  .intro-title {
+    display: inline-block;
+    color: $white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: $red;
+    padding: 2px 8px 4px 8px;
+    @media screen and (min-width: $bp-sm) {
+      font-size: 24px;
+    }
+  }
 }
 
 #team {
