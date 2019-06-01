@@ -21,6 +21,8 @@ module.exports = merge(base, {
       new TerserPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
+        chunksSortMode: 'manual',
+        chunks: ['vendor', 'main'],
         minify: {
           removeAttributeQuotes: true,
           collapseWhitespace: true,

@@ -14,7 +14,11 @@ module.exports = merge(base, {
     hot: true
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      chunksSortMode: 'manual',
+      chunks: ['vendor', 'main']
+    }),
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
