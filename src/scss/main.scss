@@ -13,223 +13,231 @@ $bp-md: 768px;
 $bp-lg: 992px;
 
 body {
-  background-color: $dark-blue;
-  font-family: 'Noto Sans TC', sans-serif !important;
+    background-color: $dark-blue;
+    font-family: 'Noto Sans TC', sans-serif !important;
 }
 
 hr {
-  border-top-color: $blue;
+    border-top-color: $blue;
 }
 
 .title {
-  color: $red;
-  font-size: 20px;
-  font-weight: bold;
-  @media screen and (min-width: $bp-sm) {
-    font-size: 28px;
-  }
+    color: $red;
+    font-size: 20px;
+    font-weight: bold;
+    @media screen and (min-width: $bp-sm) {
+        font-size: 28px;
+    }
 }
 
 .subtitle {
-  color: $blue;
-  font-size: 14px;
-  font-weight: bold;
-  @media screen and (min-width: $bp-sm) {
-    font-size: 21px;
-  }
+    color: $blue;
+    font-size: 14px;
+    font-weight: bold;
+    @media screen and (min-width: $bp-sm) {
+        font-size: 21px;
+    }
+}
+
+.text {
+    color: $red;
 }
 
 .large-body {
-  color: $blue;
-  font-size: 12px;
-  @media screen and (min-width: $bp-sm) {
-    font-size: 14px;
-  }
+    color: $blue;
+    font-size: 12px;
+    @media screen and (min-width: $bp-sm) {
+        font-size: 14px;
+    }
 }
 
 .body {
-  color: $white;
-  line-height: 20px;
-  letter-spacing: 1px;
-  font-size: 12px;
-  font-weight: lighter;
-  @media screen and (min-width: $bp-sm) {
-    line-height: 30px;
+    color: $white;
+    line-height: 20px;
     letter-spacing: 1px;
-    font-size: 14px;
-    font-weight: normal;
-  }
+    font-size: 12px;
+    font-weight: lighter;
+    @media screen and (min-width: $bp-sm) {
+        line-height: 30px;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: normal;
+    }
 }
 
 #banner {
-  height: calc(100vw / 0.7);
-  background: {
-    image: url('../assets/images/banner-mobile.png');
-    size: contain;
-    repeat: no-repeat;
-    size: 110%;
-    position: 75%;
-  }
-  @media screen and (min-width: $bp-sm) {
-    height: calc(100vw / 1.6);
+    height: calc(100vw / 0.7);
     background: {
-      image: url('../assets/images/banner.svg');
-      size: 100%;
-      position: initial;
+        image: url('../assets/images/banner-mobile.png');
+        size: contain;
+        repeat: no-repeat;
+        size: 110%;
+        position: 75%;
     }
-  }
+    @media screen and (min-width: $bp-sm) {
+        height: calc(100vw / 1.6);
+        background: {
+            image: url('../assets/images/banner.svg');
+            size: 100%;
+            position: initial;
+        }
+    }
 }
 
 #navbar {
-  background-color: transparent !important;
-  padding-right: 4%;
-  padding-left: 4%;
-  .nav-link {
-    color: $white;
-    font-size: 14px;
-  }
+    background-color: transparent !important;
+    padding-right: 4%;
+    padding-left: 4%;
+    .nav-link {
+        color: $white;
+        font-size: 14px;
+    }
 }
 
 #intro {
-  display: flex;
-  align-items: center;
-  min-height: calc(50vw / 0.82);
-  background-image: initial;
-  @media screen and (min-width: $bp-lg) {
-    background: {
-      image: url('../assets/images/intro-logo.svg');
-      size: contain;
-      repeat: no-repeat;
-      size: 50%;
-      position: right top;
+    display: flex;
+    align-items: center;
+    min-height: calc(50vw / 0.82);
+    background-image: initial;
+    @media screen and (min-width: $bp-lg) {
+        background: {
+            image: url('../assets/images/intro-logo.svg');
+            size: contain;
+            repeat: no-repeat;
+            size: 50%;
+            position: right top;
+        }
     }
-  }
 }
 
 #team {
-  &.team-container {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1130px;
-  }
-  .carousel-indicators {
-    display: none;
-    @media screen and (min-width: $bp-sm) {
-      display: flex;
-      top: 105%;
-      justify-content: flex-end;
-      margin: 0;
-      li {
-        height: 22px;
-        width: 22px;
-        border-radius: 50%;
-        margin-left: 16px;
-        margin-right: 0;
-      }
+    &.team-container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1130px;
     }
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    top: 105%;
-    @media screen and (min-width: $bp-sm) {
-      display: none;
-    }
-  }
-
-  .team-group {
-    flex: 1;
-    position: relative;
-    height: 384px;
-    @media screen and (min-width: $bp-sm) {
-      height: 544px;
-    }
-    .team-group-name {
-      text-transform: uppercase;
-      text-align: right;
-      height: 25px;
-      position: absolute;
-      transform-origin: 0 0;
-      transform: rotate(-90deg);
-      background-color: $red;
-      span {
-        color: $white;
-        font-size: 28px;
-      }
-    }
-    .team-group-crews {
-      position: absolute;
-      left: 65px;
-      .team-group-crew {
-        height: 96px;
+    .carousel-indicators {
+        display: none;
         @media screen and (min-width: $bp-sm) {
-          height: 136px;
+            display: flex;
+            top: 105%;
+            justify-content: flex-end;
+            margin: 0;
+            li {
+                height: 22px;
+                width: 22px;
+                border-radius: 50%;
+                margin-left: 16px;
+                margin-right: 0;
+            }
         }
-      }
     }
-  }
 
-  .group-12 ~ .group-12,
-  .group-13 ~ .group-13 {
-    .team-group-name {
-      visibility: hidden;
+    .carousel-control-prev,
+    .carousel-control-next {
+        top: 105%;
+        @media screen and (min-width: $bp-sm) {
+            display: none;
+        }
     }
-  }
+
+    .team-group {
+        flex: 1;
+        position: relative;
+        height: 384px;
+        @media screen and (min-width: $bp-sm) {
+            height: 544px;
+        }
+        .team-group-name {
+            text-transform: uppercase;
+            text-align: right;
+            height: 25px;
+            position: absolute;
+            transform-origin: 0 0;
+            transform: rotate(-90deg);
+            background-color: $red;
+            span {
+                color: $white;
+                font-size: 28px;
+            }
+        }
+        .team-group-crews {
+            position: absolute;
+            left: 65px;
+            .team-group-crew {
+                height: 96px;
+                @media screen and (min-width: $bp-sm) {
+                    height: 136px;
+                }
+            }
+        }
+    }
+
+    .group-12 ~ .group-12,
+    .group-13 ~ .group-13 {
+        .team-group-name {
+            visibility: hidden;
+        }
+    }
 }
 
 #organizer .organizer-organizers {
-  img {
-    height: 100px;
-    margin-right: 32px;
-  }
+    img {
+        height: 100px;
+        margin-right: 32px;
+    }
 }
 
 #contact {
-  position: relative;
-  .contact-map {
-    width: 100%;
-    height: 187px;
-    display: inline-block;
-    @media screen and (min-width: $bp-sm) {
-      height: 327px;
+    position: relative;
+    .contact-map {
+        width: 100%;
+        height: 187px;
+        display: inline-block;
+        @media screen and (min-width: $bp-sm) {
+            height: 327px;
+        }
     }
-  }
-  .contact-location {
-    background-color: $red;
-    padding: 16px;
-    @media screen and (min-width: $bp-sm) {
-      position: absolute;
-      top: 0;
-      left: 15px;
+    .contact-location {
+        background-color: $red;
+        padding: 16px;
+        @media screen and (min-width: $bp-sm) {
+            position: absolute;
+            top: 0;
+            left: 15px;
+        }
     }
-  }
 }
 
 #footer {
-  margin-top: 120px;
-  background-color: rgba(255, 255, 255, 0.13);
-  padding: 24px;
-  @media screen and (min-width: $bp-md) {
-    margin-top: 300px;
-  }
-
-  .copyright {
-    color: $white;
-    font-size: 14px;
-    font-weight: bold;
+    margin-top: 120px;
+    background-color: rgba(255, 255, 255, 0.13);
+    padding: 24px;
     @media screen and (min-width: $bp-md) {
-      margin-right: 72px;
+        margin-top: 300px;
     }
-  }
 
-  span,
-  a {
-    flex: 1;
-    @media screen and (min-width: $bp-md) {
-      margin-right: 6px;
+    .copyright {
+        color: $white;
+        font-size: 14px;
+        font-weight: bold;
+        @media screen and (min-width: $bp-md) {
+            margin-right: 72px;
+        }
     }
-  }
+
+    .web-link {
+        color: $white;
+    }
+
+    span,
+    a {
+        flex: 1;
+        @media screen and (min-width: $bp-md) {
+            margin-right: 6px;
+        }
+    }
 }

@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 // map section
 var map, styledMapType;
 export default function initMap() {

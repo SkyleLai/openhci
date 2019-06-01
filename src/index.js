@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 import './scss/main.scss';
 import groups from './assets/js/groups';
 import initMap from './assets/js/map';
