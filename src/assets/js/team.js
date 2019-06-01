@@ -1,3 +1,5 @@
+const $ = window.$;
+
 const raw = `不顯示,僅顯示英文,,姓名,學校,系所,指導教授
 總召,Program,3,李其蓉,國立清華大學,科技管理學院學士班,朱宏國
 ,,,韓舒容,國立政治大學,數位內容碩士學位學程,陳宜秀
@@ -133,4 +135,35 @@ team.forEach(({ groupName, crews }, groupIndex) => {
   `);
 });
 
-export default groups;
+export const updateTeam = () => {
+  const w = $(window).width(),
+    bp = [0, 580, 855, 1130];
+  let count = 0;
+  while (w >= bp[count]) count++;
+
+  $('.carousel-inner').empty();
+  $('.carousel-indicators').empty();
+  const p = Math.ceil(groups.length / count);
+  for (let i = 0; i < p; i++) {
+    let groupsHTML = '';
+    for (let j = 0; j < count && i * count + j < groups.length; j++)
+      groupsHTML += groups[i * count + j];
+    $(`
+      <div class="carousel-item">
+        <div class="d-flex">
+          ${groupsHTML}
+        </div>
+      </div>
+    `).appendTo('#team .carousel-inner');
+    $(`<li data-target="#team-carousel" data-slide-to="${i}"></li>`).appendTo(
+      '#team .carousel-indicators'
+    );
+  }
+  $('#team .carousel-item')
+    .first()
+    .addClass('active');
+  $('#team .carousel-indicators li')
+    .first()
+    .addClass('active');
+  $('#carousel').carousel();
+};

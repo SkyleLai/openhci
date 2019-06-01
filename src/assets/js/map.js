@@ -1,6 +1,6 @@
 // map section
 var map, styledMapType;
-export default function initMap() {
+export function initMap() {
   styledMapType = new google.maps.StyledMapType(
     [
       {
