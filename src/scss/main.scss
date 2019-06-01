@@ -122,14 +122,14 @@ hr {
     color: $white;
     font-size: 14px;
     &.active:before {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 4px;
-      background-color: $red;
-      left: 0;
-      bottom: 0;
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: $red;
+        left: 0;
+        bottom: 0;
     }
   }
   .navbar-toggler {
@@ -137,6 +137,26 @@ hr {
     border: 0;
   }
 }
+
+#schedule {
+    .nav-item {
+        width: 20%;
+    }
+    .nav-item .nav-link {
+        background-color: $red;
+        .tab-title {
+            color: $white;
+        }
+    }
+    .nav-item .nav-link:not(.active) {
+        background-color: $dark-blue;
+        color: $red;
+        .tab-title {
+            color: $blue;
+        }
+    }
+}
+
 
 #intro {
     display: flex;
@@ -153,17 +173,17 @@ hr {
         }
     }
 
-  .intro-title {
-    display: inline-block;
-    color: $white;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: $red;
-    padding: 2px 8px 4px 8px;
-    @media screen and (min-width: $bp-sm) {
-      font-size: 24px;
+    .intro-title {
+        display: inline-block;
+        color: $white;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: $red;
+        padding: 2px 8px 4px 8px;
+        @media screen and (min-width: $bp-sm) {
+            font-size: 24px;
+        }
     }
-  }
 }
 
 #team {
@@ -286,7 +306,7 @@ hr {
     }
 
     .web-link {
-        color: $white;
+        color: rgba($white, 0.5);
     }
 
     span,
