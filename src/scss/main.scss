@@ -5,6 +5,7 @@ $spacer: 2rem;
 
 $blue: #69b1e2;
 $red: #d03076;
+$red_text: #ff0d77;
 $white: #ffffff;
 $dark-blue: #153660;
 
@@ -40,7 +41,7 @@ hr {
 }
 
 .text {
-    color: $red;
+    color: $red_text;
 }
 
 .large-body {
@@ -136,6 +137,9 @@ hr {
     color: $white;
     border: 0;
   }
+  #navbarContent {
+      background-color: rgba($dark-blue, 0.8);
+  }
 }
 
 #schedule {
@@ -184,6 +188,15 @@ hr {
             font-size: 24px;
         }
     }
+}
+
+.highlight {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: $red;
+    padding: 2px 15px;
+    margin: 20px 0;
 }
 
 #team {
