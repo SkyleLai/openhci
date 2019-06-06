@@ -149,24 +149,45 @@ hr {
     .nav-item {
         width: 33%;
         @media screen and (min-width: $bp-sm) {
+            width: 30%;
+        }
+        @media screen and (min-width: $bp-lg){
             width: 18.5%;
         }
     }
     .nav-item .nav-link {
-        background-color: $red;
-        .tab-title {
-            color: $white;
+        padding: 0;
+        @media screen and (min-width: $bp-sm) {
+            padding: 8px 16px 8px 16px;
+        }
+        background-color: $dark-blue;
+        p {
+            padding: 4px 6px 4px 10px;
+            margin-bottom: 0;
+            background-color: $red;
+            @media screen and (min-width: $bp-sm) {
+                padding: 6px 0px 6px 16px;
+            }
+        }
+        p.tab-sub {
+            width: 80%;
+            @media screen and (min-width: $bp-sm) {
+                width: 75%;
+            }
         }
     }
     .nav-item .nav-link:not(.active) {
-        background-color: $dark-blue;
-        color: $red;
-        .tab-title {
+        p {
+            background-color: $dark-blue;
+        }
+        p.tab-title {
             color: $blue;
+        }
+        p.tab-sub {
+            color: $red;
         }
     }
 }
-
 
 #intro {
     display: flex;
@@ -212,7 +233,15 @@ hr {
         padding-right: 15px;
         margin-right: auto;
         margin-left: auto;
-        max-width: 1130px;
+        @media screen and (min-width: $bp-sm) {
+            max-width: 540px;
+        }
+        @media screen and (min-width: $bp-md) {
+            max-width: 730px;
+        }
+        @media screen and (min-width: $bp-lg) {
+            max-width: 1130px;
+        }
     }
     .carousel-indicators {
         display: none;
@@ -319,6 +348,8 @@ hr {
         color: $white;
         font-size: 14px;
         font-weight: bold;
+        padding-bottom: 10px;
+        text-align: center;        
         @media screen and (min-width: $bp-md) {
             margin-right: 72px;
         }
@@ -331,6 +362,7 @@ hr {
     span,
     a {
         flex: 1;
+        text-align: center;   
         @media screen and (min-width: $bp-md) {
             margin-right: 6px;
         }

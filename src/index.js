@@ -17,5 +17,6 @@ updateNavbar();
 updateTeam();
 initMap();
 
+
 // used for webpack-dev-server hot loading
 if (module && module.hot) module.hot.accept();

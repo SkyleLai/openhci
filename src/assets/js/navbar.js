@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 const $ = window.$;
 
 export const updateNavbar = () => {
