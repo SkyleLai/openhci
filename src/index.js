@@ -22,9 +22,6 @@ $(".menu-btn,.black-screen").on("click", function() {
 	$(".m-menu-opener").removeClass('close');
 })
 
-
-
-
 const controller = new ScrollMagic.Controller();
 const sectionHeight = $("#landing").height() - ($("header").height()==100?100:0);
 const sceneHeader = new ScrollMagic.Scene({triggerElement: "#landing", duration: sectionHeight, triggerHook: 0})
@@ -32,7 +29,6 @@ const sceneHeader = new ScrollMagic.Scene({triggerElement: "#landing", duration:
 .addTo(controller);
 $(window).on("resize", function(){
 	const sectionHeight = $("#landing").height() - ($("header").height()==100?100:0);
-	sceneHeader.remove();
 	const sceneHeader = new ScrollMagic.Scene({triggerElement: "#landing", duration: sectionHeight, triggerHook: 0})
 	.setClassToggle("header", "atLanding")
 	.addTo(controller);
@@ -49,10 +45,44 @@ for(let i=0; i<sections.length; i++) {
 	.addTo(controller);
 }
 
+var isScrolling = false;
+$(function() {
+	$('header a[href*="#"]:not([href="#"])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+				isScrolling = true;
+				$('html, body').animate({
+				scrollTop: target.offset().top - ($("header").height()==100?0:0)
+				}, 400, function(){
+					setTimeout(function(){
+						isScrolling = false;
+					},100);
+	        	});
+				return false;
+			}
+		}
+	});
+});
 
-
+$("#sign-up").on("click",function(){
+	$(".lightbox").addClass('active');
+	var tl = new TimelineMax({repeat:0});
+	tl.fromTo($(".lightbox .info"), 0.5, {x:-30,opacity:0},{x:-30,opacity:0});
+	tl.fromTo($(".lightbox .info"), 0.5, {x:-30,opacity:0},{x:0,opacity:1});
+	tl.fromTo($(".lightbox .list:nth-child(2) .title"), 0.5, {x:-30,opacity:0},{x:0,opacity:1});
+	tl.fromTo($(".lightbox .list:nth-child(2) .content"), 0.5, {x:-30,opacity:0},{x:0,opacity:1});
+	tl.fromTo($(".lightbox .list:nth-child(3) .title"), 0.5, {x:-30,opacity:0},{x:0,opacity:1});
+	tl.fromTo($(".lightbox .list:nth-child(3) .content"), 0.5, {x:-30,opacity:0},{x:0,opacity:1});
+})
+$(".lightbox .close").on("click",function(){
+	$(".lightbox").removeClass('active');
+	
+})
 updateTeam();
 initMap();
+
 
 // used for webpack-dev-server hot loading
 if (module && module.hot) module.hot.accept();
