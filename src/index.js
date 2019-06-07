@@ -80,6 +80,10 @@ $(".lightbox .close").on("click",function(){
 	$(".lightbox").removeClass('active');
 	
 })
+
+$(window).on('resize', () => {
+	updateTeam();
+});
 updateTeam();
 initMap();
 
