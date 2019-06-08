@@ -153,8 +153,10 @@ hr {
 }
 
 #schedule {
+    height: 565px;
     @media screen and (min-width: $bp-sm) {
         padding: 0;
+        height: 460px;
     }
     .nav-item {
         width: 50%;
