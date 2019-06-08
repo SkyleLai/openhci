@@ -142,6 +142,69 @@ hr {
     }
 }
 
+#schedule.wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    @media screen and (min-width: $bp-lg) {
+        margin: 0px auto;
+        width: 90%;
+    }
+}
+
+#schedule {
+    @media screen and (min-width: $bp-sm) {
+        padding: 0;
+    }
+    .nav-item {
+        width: 33%;
+        @media screen and (min-width: $bp-sm) {
+            width: 33%;
+        }
+        @media screen and (min-width: $bp-lg) {
+            width: 18.5%;
+        }
+    }
+    .nav-item .nav-link {
+        padding: 0px 16px 0px 0px;
+        @media screen and (min-width: $bp-sm) {
+            padding: 0;
+        }
+        background-color: $dark-blue;
+        p {
+            padding: 4px 6px 4px 10px;
+            margin-bottom: 0;
+            background-color: $red;
+            @media screen and (min-width: $bp-sm) {
+                padding: 0px 0px 0px 16px;
+            }
+        }
+        p.tab-title {
+            width: 80%;
+            @media screen and (min-width: $bp-sm) {
+                width: 75%;
+            }
+        }
+        p.tab-sub {
+            width: 60%;
+            @media screen and (min-width: $bp-sm) {
+                width: 55%;
+            }
+        }
+    }
+    .nav-item .nav-link:not(.active) {
+        p {
+            background-color: $dark-blue;
+        }
+        p.tab-title {
+            color: $blue;
+        }
+        p.tab-sub {
+            color: $red;
+        }
+    }
+}
+
 #register {
     position: relative;
     overflow: hidden;
