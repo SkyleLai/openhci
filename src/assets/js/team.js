@@ -89,7 +89,7 @@ raw
 const groups = [];
 team.forEach(({ groupName, crews }, groupIndex) => {
   let teamGroupCrews = '';
-  const l = groupName.length * 21;
+  const l = groupName.length * 23;
   crews.forEach(({ name, school, dept, teacher }, index) => {
     if (index % 4 === 0) {
       if (teamGroupCrews !== '') {
