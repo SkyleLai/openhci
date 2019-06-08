@@ -157,7 +157,7 @@ hr {
         padding: 0;
     }
     .nav-item {
-        width: 33%;
+        width: 50%;
         @media screen and (min-width: $bp-sm) {
             width: 33%;
         }
@@ -166,13 +166,10 @@ hr {
         }
     }
     .nav-item .nav-link {
-        padding: 0px 16px 0px 0px;
-        @media screen and (min-width: $bp-sm) {
-            padding: 0;
-        }
+        padding: 0;
         background-color: $dark-blue;
         p {
-            padding: 4px 6px 4px 10px;
+            padding: 0px 0px 0px 10px;
             margin-bottom: 0;
             background-color: $red;
             @media screen and (min-width: $bp-sm) {
@@ -180,15 +177,15 @@ hr {
             }
         }
         p.tab-title {
-            width: 80%;
+            width: 75%;
             @media screen and (min-width: $bp-sm) {
-                width: 75%;
+                width: 65%;
             }
         }
         p.tab-sub {
             width: 60%;
             @media screen and (min-width: $bp-sm) {
-                width: 55%;
+                width: 50%;
             }
         }
     }
