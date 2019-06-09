@@ -11,10 +11,13 @@ $red_text: #ff0d77;
 $white: #ffffff;
 $dark-blue: #153660;
 
+$PC1440: 1439px;
+$PC1025: 1025px;
 $PC1023: 1023px;
 $PC1110: 1110px;
 $PC1170: 1170px;
 $ipad: 769px;
+
 
 $bp-sm: 576px;
 $bp-md: 768px;
@@ -75,8 +78,10 @@ p {
 .wrapper {
     margin: 0px auto;
     width: 90%;
+    max-width: 1440px;
     @media screen and (max-width: $PC1023) {
         width: 85%;
+        max-width: 100%;
     }
 }
 
@@ -149,8 +154,9 @@ hr {
     height: 100%;
     position: relative;
     overflow: hidden;
+    margin-top: 100px;
     @media screen and (min-width: $bp-lg) {
-        margin: 0px auto;
+        margin: 100px auto;
         width: 90%;
         padding-top: 100px;
         padding-bottom: 100px;
@@ -241,6 +247,9 @@ hr {
 #register {
     position: relative;
     overflow: hidden;
+    @media screen and (max-width: $ipad) {
+        padding-top: 70px; 
+    }    
     &::before {
         content: " ";
         background: linear-gradient(#CF3077,#34ACD8);
@@ -270,7 +279,6 @@ hr {
         }
     }
     .register_box {
-        padding-top: 70px;
         padding-bottom: 150px;
         .title {
             color: #d03076;
@@ -572,6 +580,10 @@ header {
 
 #taichi {
     position: relative;
+    padding-bottom: 70px;
+    @media screen and (max-width: $ipad) {
+        padding-top: 70px;
+    } 
     &::before {
         content: " ";
         background: linear-gradient(#CF3077,#34ACD8);
@@ -587,7 +599,6 @@ header {
         }     
     }
     .taichi_box {
-        padding-top: 70px;
         .taichi_img{
             position: relative;
             &::before {
@@ -599,7 +610,7 @@ header {
                 position: absolute;
                 z-index: -1;
                 left: 165px;
-                bottom: 100px;  
+                bottom: 0px;  
                 @media screen and (max-width: $ipad) {
                     bottom: initial;
                     top: -150px;
@@ -614,7 +625,7 @@ header {
                 position: absolute;
                 z-index: -1;
                 left: 100px;
-                bottom: 225px;
+                bottom: 150px;
                 @media screen and (max-width: $ipad) {
                     bottom: initial;
                     top: -225px;
@@ -649,71 +660,101 @@ header {
         display: flex;   
         flex-direction: row;
         overflow-x: hidden;
+        padding-bottom: 100px;
         .sybmiote_img {
             width: 40%;
-            padding: 130px 80px 80px 80px;
+            padding: 0px 0px 0px 11%;
+            img {
+                max-width: 381px;  
+            }
             @media screen and (max-width: $PC1023) {
                 display: none;
             }
-        }
+        }            
         .theme_description {
             width: 60%;
-            padding: 130px 135px 80px 0px;
+            margin: 20px 135px 0px 0px;
+            position: relative;
+            @media screen and (max-width: $PC1025) {
+                margin: 20px 0px 0px 0px;
+            }   
             @media screen and (max-width: $PC1023) {
                 width: 100%;
                 padding: 0px 0px 65px 0px;
             }
-            .description_title {
-                color: $red;
-                font-size: 28px;
-                font-weight: bold;
-                padding: 65px 0px 30px 0px;
-                letter-spacing: 3px;
-                &::after {
-                    content: " ";
-                    position: absolute;
-                    background-color: $red;
-                    width: 30px;
-                    height: 40px;
-                    transform: translateX(430px) translateY(-50px);
-                    @media screen and (max-width: $PC1023) {
-                        display: none;
+            .theme_description_block{
+                min-width: 500px;
+                position: absolute;
+                top: 10%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-10%);
+                @media screen and (max-width: $PC1025) {
+                    position: relative;
+                    min-width: inherit;
+                    width: 400px;
+                }
+                @media screen and (max-width: $PC1023) {
+                    width: 100%;
+                }       
+                .description_title {
+                    color: $red;
+                    font-size: 28px;
+                    font-weight: bold;
+                    padding: 65px 0px 30px 0px;
+                    letter-spacing: 3px;
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        background-color: $red;
+                        width: 30px;
+                        height: 40px;
+                        transform: translateX(430px) translateY(-50px);
+                        @media screen and (max-width: $PC1025) {
+                            display: none;
+                        } 
+                        @media screen and (max-width: $PC1023) {
+                            display: none;
+                        }
+                    }
+                    &::before {
+                        content: " ";
+                        position: absolute;
+                        background-color: $blue;
+                        width: 20px;
+                        height: 45px;
+                        transform: translateX(540px) translateY(-20px);  
+                        @media screen and (max-width: $PC1025) {
+                            display: none;
+                        }
+                        @media screen and (max-width: $PC1023) {
+                            display: none;
+                        }                  
                     }
                 }
-                &::before {
-                    content: " ";
-                    position: absolute;
-                    background-color: $blue;
-                    width: 20px;
-                    height: 45px;
-                    transform: translateX(540px) translateY(-20px);  
-                    @media screen and (max-width: $PC1023) {
-                        display: none;
-                    }                  
-                }
-            }
-            .description_body {
-                font-size: 14px;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: 2em;
-                letter-spacing: 1px;
-                text-align: justify;
-                color: #ffffff;
-                &::after {
-                    content: " ";
-                    position: absolute;
-                    border-bottom: 3px solid #5594c3;
-                    width: 200px;
-                    margin-top: 55px;
-                    @media screen and (max-width: $PC1023) {
-                        display: none;
+                .description_body {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 2em;
+                    letter-spacing: 1px;
+                    text-align: justify;
+                    color: #ffffff;
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        border-bottom: 3px solid #5594c3;
+                        width: 200px;
+                        margin-top: 55px;
+                        @media screen and (max-width: $PC1023) {
+                            display: none;
+                        }
                     }
-                }
-                p:nth-child(2) {
-                    margin-top: 20px;
-                }
+                    p:nth-child(2) {
+                        margin-top: 20px;
+                    }
+                }                
             }
+
         }    
     }
 }
@@ -721,9 +762,22 @@ header {
 #intro {
     background-image: url(../assets/images/intro-logo.svg);
     background-repeat: no-repeat;
-    background-size: 38%;
-    background-position: 90% center;
+    background-size: 30%;
+    background-position: 80% center;
     position: relative;
+    @media screen and (max-width: $PC1023) {
+        &::before {
+            content: " ";
+            background: linear-gradient(#34ACD8, #CF3077);
+            border-radius: 100%;
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            z-index: -1;
+            top: 0px;
+            left: -70px;     
+        }        
+    }
     &::after {
         content: " ";
         background: linear-gradient(#34ACD8, #CF3077);
@@ -735,7 +789,11 @@ header {
         left: -70px;
         bottom: -85px;
         @media screen and (max-width: $PC1023) {
-            top: 0px;
+            right: -80px;
+            bottom: 0px;
+            left: initial;
+            width: 200px;
+            height: 200px;
         }       
     }
     @media screen and (max-width: $PC1023) {
@@ -746,6 +804,7 @@ header {
         display: flex;
         flex-direction: row;
         overflow: hidden;
+        padding-bottom: 100px;
         @media screen and (max-width: $PC1023) {
             flex-direction: column;
         }
@@ -754,7 +813,7 @@ header {
         width: 41.5%;
         margin-left: 8%;
         height: auto;
-        padding: 100px 0px;
+        padding-top: 100px;
         position: relative;
         &::before {
             content: " ";
@@ -768,7 +827,7 @@ header {
             top: 40px;
             @media screen and (max-width: $PC1023) {
                 display: none;
-            }
+            } 
         }
         &::after {
             content: " ";
@@ -780,7 +839,7 @@ header {
             z-index: -1;
             left: -90px;
             top: 180px;  
-            @media screen and (max-width: $PC1023) {
+            @media screen and (max-width: $PC1025) {
                 display: none;
             }          
         }
@@ -831,7 +890,7 @@ header {
 }
 
 #team {
-    padding-top: 100px;
+    padding-bottom: 100px;
     width: 100%;
     height: 900px;
     @media screen and (max-width: $ipad) {
@@ -910,7 +969,7 @@ header {
 }
 
 #organizer {
-    padding-top: 100px;
+    padding-bottom: 100px;
     height: auto;
     display: flex;
     justify-content: center;
