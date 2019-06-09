@@ -713,6 +713,9 @@ header {
                     font-weight: bold;
                     padding: 65px 0px 30px 0px;
                     letter-spacing: 3px;
+                    @media screen and (max-width: $PC1023) {
+                       font-size: 21px;
+                    }
                     &::after {
                         content: " ";
                         position: absolute;
@@ -882,13 +885,13 @@ header {
     .fifty{
         width: 50%;
         @media screen and (max-width: $ipad) {
-            width: 100%;
+            width: 60%;
         }
     }
     .eighty{
         width: 80%;
         @media screen and (max-width: $ipad) {
-            width: 100%;
+            width: 90%;
         }
     }
     .hundred{
