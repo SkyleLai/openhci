@@ -11,7 +11,9 @@ $red_text: #ff0d77;
 $white: #ffffff;
 $dark-blue: #153660;
 
+$PC1600: 1600px;
 $PC1440: 1439px;
+$PC1400: 1400px;
 $PC1025: 1025px;
 $PC1023: 1023px;
 $PC1110: 1110px;
@@ -22,6 +24,7 @@ $ipad: 769px;
 $bp-sm: 576px;
 $bp-md: 768px;
 $bp-lg: 992px;
+$bp-xl: 1200px;
 
 html, body {
     font-family: NotoSansUI, sans-serif, PingFangTC, "微軟正黑體", Noto Sans TC;
@@ -156,11 +159,15 @@ hr {
     position: relative;
     overflow: hidden;
     margin-top: 100px;
+    max-width: 1600px;
     @media screen and (min-width: $bp-lg) {
         margin: 100px auto;
-        width: 90%;
+        width: 100%;
         padding-top: 100px;
         padding-bottom: 100px;
+    }
+    @media screen and (min-width: $bp-xl) {
+        width: 90%;
     }
     @media screen and (max-width: $ipad) {
         padding-top: 130px;
@@ -215,6 +222,9 @@ hr {
             width: 33%;
         }
         @media screen and (min-width: $bp-lg) {
+            width: 30%;
+        }
+        @media screen and (min-width: $bp-xl) {
             width: 18.5%;
         }
     }
@@ -234,11 +244,35 @@ hr {
             @media screen and (min-width: $bp-sm) {
                 width: 65%;
             }
+            @media screen and (min-width: $bp-lg) {
+                width: 55%;
+            }
+            @media screen and (min-width: $bp-xl) {
+                width: 75%;
+            }
+            @media screen and (min-width: $PC1400) {
+                width: 65%;
+            }
+            @media screen and (min-width: $PC1600) {
+                width: 70%;
+            }
         }
         p.tab-sub {
             width: 60%;
             @media screen and (min-width: $bp-sm) {
                 width: 50%;
+            }
+            @media screen and (min-width: $bp-lg) {
+                width: 40%;
+            }
+            @media screen and (min-width: $bp-xl) {
+                width: 60%;
+            }
+            @media screen and (min-width: $PC1400) {
+                width: 50%;
+            }
+            @media screen and (min-width: $PC1600) {
+                width: 55%;
             }
         }
     }
