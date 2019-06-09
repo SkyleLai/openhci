@@ -51,6 +51,7 @@ p {
     .date_image {
         @media screen and (max-width: $PC1023) {
             width: 145px;
+            top: 8px;
         }
     }
     .MB_logo, .MB_logoOppstive {
@@ -175,6 +176,11 @@ hr {
         height: 80px;
         background-size: 100%;
         background-repeat: no-repeat;
+        @media screen and (max-width: $ipad) {
+            width: 200px;
+            height: 55px;
+            right: 5%;
+        }
     }
     &::after {
         content: " ";
@@ -186,6 +192,11 @@ hr {
         height: 80px;
         background-size: 100%;
         background-repeat: no-repeat;
+        @media screen and (max-width: $ipad) {
+            width: 200px;
+            height: 55px;
+            left: 5%;
+        }
     }
 }
 
@@ -770,8 +781,8 @@ header {
             content: " ";
             background: linear-gradient(#34ACD8, #CF3077);
             border-radius: 100%;
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             position: absolute;
             z-index: -1;
             top: 0px;
