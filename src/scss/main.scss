@@ -59,6 +59,9 @@ p {
             width: 145px;
             top: 8px;
         }
+        @media screen and (max-width: $ipad) and (max-height: 1025px) and (min-width: 767px) and (min-height: 1023px){
+            width: 220px;
+        }
     }
     .MB_logo, .MB_logoOppstive {
         @media screen and (max-width: $PC1023) {
