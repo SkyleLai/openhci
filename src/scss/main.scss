@@ -154,140 +154,136 @@ hr {
     }
 }
 
-#schedule.wrapper {
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    margin-top: 100px;
-    max-width: 1600px;
-    @media screen and (min-width: $bp-lg) {
-        margin: 100px auto;
-        width: 100%;
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-    @media screen and (min-width: $bp-xl) {
-        width: 90%;
-    }
-    @media screen and (max-width: $ipad) {
-        padding-top: 130px;
-        overflow: hidden;
-    }
-    &::before {
-        content: " ";
-        position: absolute;
-        right: 0px;
-        top: 0px;
-        background-image: url(../assets/images/schedule_bg.png);
-        width: 300px;
-        height: 80px;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        @media screen and (max-width: $ipad) {
-            width: 200px;
-            height: 55px;
-            right: 5%;
-        }
-    }
-    &::after {
-        content: " ";
-        position: absolute;
-        left: 0px;
-        bottom: 0px;
-        background-image: url(../assets/images/schedule_bg.png);
-        width: 300px;
-        height: 80px;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        @media screen and (max-width: $ipad) {
-            width: 200px;
-            height: 55px;
-            left: 5%;
-        }
-    }
-}
-
 #schedule {
-    height: 565px;
-    .tab-content {
-        height: 500px;
+    width: 100%;
+    overflow: hidden;
+    padding: 100px 0px;
+    @media screen and (max-width: $PC1110) {
+        padding: 40px 0px;
     }
-    @media screen and (min-width: $bp-sm) {
-        padding: 0;
-        height: 460px;
-    }
-    .nav-item {
-        width: 50%;
-        @media screen and (min-width: $bp-sm) {
-            width: 33%;
+    .schedule_box {
+        position: relative;
+        padding: 80px 0px;
+        &::before {
+            content: " ";
+            position: absolute;
+            width: 200px;
+            height: 55px;
+            top: 0;
+            right: 0;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url(../assets/images/schedule_bg.png);
         }
-        @media screen and (min-width: $bp-lg) {
-            width: 30%;
+        @media screen and (max-width: $PC1110) {
+            padding: 70px 0px;
+            height: 690px;
         }
-        @media screen and (min-width: $bp-xl) {
-            width: 18.5%;
+        &::after {
+            content: " ";
+            position: absolute;
+            width: 200px;
+            height: 55px;
+            bottom: 0;
+            left: 0;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url(../assets/images/schedule_bg.png);
         }
+        ul.nav {
+            justify-content: start;
+            @media screen and (max-width: $PC1110) {
+                justify-content: space-between;
+            }
+            li.nav-item {
+                width: 20%; 
+                @media screen and (max-width: $PC1110) {
+                    width: 45%;
+                    height: 45px;
+                    margin: 10px 0px 0px 0px;
+                }          
+            }
+        }
+        .tab-content {
+            width: 100%;
+            height: 360px;
+            #pills-0 {
+                left: 0;
+            }
+            #pills-1 {
+                left: 20%;
+                @media screen and (max-width: $PC1110) {
+                    left: 0;
+                }
+            }
+            #pills-2 {
+                left: 40%;
+                @media screen and (max-width: $PC1110) {
+                    left: 0;
+                }
+            }
+            #pills-3 {
+                left: 60%;
+                @media screen and (max-width: $PC1110) {
+                    left: 0;
+                }
+            }
+            #pills-4 {
+                left: 80%;
+                @media screen and (max-width: $PC1110) {
+                    left: 0;
+                }
+            }
+            .tab-pane {
+                position: absolute;
+                h2.title {
+                    font-weight: bold;
+                    margin: 35px 0px 20px 0px;
+                    color: $red;
+                    font-size: 18px;
+                }            
+            }
+        } 
     }
     .nav-item .nav-link {
-        padding: 0;
-        background-color: rgba(21, 54, 96, 0);
-        p {
-            padding: 0px 0px 0px 10px;
-            margin-bottom: 0;
-            background-color: $red;
-            @media screen and (min-width: $bp-sm) {
-                padding: 0px 0px 0px 16px;
+        background-color: $red;
+        display: unset;
+        padding: 0px;
+        border-radius: 0px;
+        width: 130px;
+        transition: all .1s;
+        .tab-title {
+            color: $white;
+            padding: 0px 5px;
+            transition: all 1s;
+            line-height: 1.7;
+            font-weight: bold;
+            @media screen and (max-width: $PC1110) {
+                font-size: 14px;
             }
         }
-        p.tab-title {
+        .co_tittle {
+            color: $white;
             width: 75%;
-            @media screen and (min-width: $bp-sm) {
-                width: 65%;
-            }
-            @media screen and (min-width: $bp-lg) {
-                width: 55%;
-            }
-            @media screen and (min-width: $bp-xl) {
-                width: 75%;
-            }
-            @media screen and (min-width: $PC1400) {
-                width: 65%;
-            }
-            @media screen and (min-width: $PC1600) {
-                width: 70%;
-            }
-        }
-        p.tab-sub {
-            width: 60%;
-            @media screen and (min-width: $bp-sm) {
-                width: 50%;
-            }
-            @media screen and (min-width: $bp-lg) {
-                width: 40%;
-            }
-            @media screen and (min-width: $bp-xl) {
-                width: 60%;
-            }
-            @media screen and (min-width: $PC1400) {
-                width: 50%;
-            }
-            @media screen and (min-width: $PC1600) {
-                width: 55%;
+            padding: 3px 5px;
+            background-color: $red;
+            font-weight: bold;
+            transition: all .1s;
+            @media screen and (max-width: $PC1110) {
+                font-size: 14px;
             }
         }
     }
     .nav-item .nav-link:not(.active) {
-        p {
-            background-color: rgba(21, 54, 96, 0);
-        }
-        p.tab-title {
+        background-color: rgba(21, 54, 96, 0);
+        color: $red;
+        width: 0px;
+        .tab-title {
             color: $blue;
         }
-        p.tab-sub {
+        .co_tittle {
             color: $red;
+            background-color: rgba(255, 255, 255, 0);
         }
     }
 }
@@ -295,6 +291,7 @@ hr {
 #register {
     position: relative;
     overflow: hidden;
+    padding-top: 100px; 
     @media screen and (max-width: $ipad) {
         padding-top: 70px; 
     }    
@@ -628,6 +625,7 @@ header {
 #taichi {
     position: relative;
     padding-bottom: 70px;
+    padding-top: 100px;
     @media screen and (max-width: $ipad) {
         padding-top: 70px;
     } 
@@ -708,6 +706,10 @@ header {
         flex-direction: row;
         overflow-x: hidden;
         padding-bottom: 100px;
+        padding-top: 130px;
+        @media screen and (max-width: $ipad) {
+            padding-top: 0px;
+         } 
         .sybmiote_img {
             width: 40%;
             padding: 0px 0px 0px 11%;
@@ -943,6 +945,7 @@ header {
     padding-bottom: 100px;
     width: 100%;
     height: 1000px;
+    padding-top: 70px;
     @media screen and (max-width: $ipad) {
         height: 750px;
         padding-top: 20px;
@@ -1023,6 +1026,7 @@ header {
     height: auto;
     display: flex;
     justify-content: center;
+    padding-top: 100px;
     @media screen and (max-width: $ipad) {
         padding-top: 70px;
     }

@@ -54,7 +54,7 @@ $(function() {
 			if (target.length) {
 				isScrolling = true;
 				$('html, body').animate({
-				scrollTop: target.offset().top - ($("header").height()==100?100:0)
+				scrollTop: target.offset().top - ($("header").height()==100?0:0)
 				}, 400, function(){
 					setTimeout(function(){
 						isScrolling = false;
