@@ -459,7 +459,7 @@ header {
             width: 100%; }
           header .menu .menu-container .menu-btn.menu-here::before {
             width: 100% !important; }
-        header .menu .menu-container #sign-up {
+        header .menu .menu-container .sign-up {
           background: linear-gradient(#0f86cf, #dd3480);
           width: 80px;
           height: 25px;
@@ -474,9 +474,9 @@ header {
           transition: all 0.1s;
           cursor: pointer;
          }
-          header .menu .menu-container #sign-up::before {
+          header .menu .menu-container .sign-up::before {
             display: none; }
-          header .menu .menu-container #sign-up:hover {
+          header .menu .menu-container .sign-up:hover {
             background: linear-gradient(#6bc5fd, #ff62a9);
          }
       @media screen and (max-width: $PC1023) {
@@ -552,7 +552,7 @@ header {
       @media screen and (max-width: $PC1023) {
                 header .menu .menu-container .in-site .menu-btn::before, header .menu .menu-container .out-site .menu-btn::before {
                   display: none; }
-              header .menu .menu-container .in-site #sign-up, header .menu .menu-container .out-site #sign-up {
+              header .menu .menu-container .in-site .sign-up, header .menu .menu-container .out-site .sign-up {
                 width: 40%;
                 height: 32px;
                 margin-top: 10px;
