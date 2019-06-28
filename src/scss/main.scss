@@ -161,7 +161,7 @@ hr {
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 100px 0px;
+    padding: 80px 0px 100px 0px;
     @media screen and (max-width: $PC1110) {
         padding: 40px 0px;
     }
@@ -712,113 +712,112 @@ header {
 }
 
 #theme {
+    height: 100vh;
+    position: relative;
+    @media screen and (max-width: $ipad) {
+        height: auto;
+    }
     .theme_box {
-        display: flex;   
-        flex-direction: row;
-        overflow-x: hidden;
-        padding-bottom: 100px;
-        padding-top: 130px;
+        position: absolute;
+        top: 60%;
+        transform: translateY(-60%);
+        width: 100%;
         @media screen and (max-width: $ipad) {
-            padding-top: 0px;
-         } 
-        .sybmiote_img {
-            width: 40%;
-            padding: 0px 0px 0px 11%;
-            img {
-                max-width: 381px;  
-            }
-            @media screen and (max-width: $PC1023) {
-                display: none;
-            }
-        }            
-        .theme_description {
-            width: 60%;
-            margin: 20px 135px 0px 0px;
-            position: relative;
-            @media screen and (max-width: $PC1025) {
-                margin: 20px 0px 0px 0px;
-            }   
-            @media screen and (max-width: $PC1023) {
-                width: 100%;
-                padding: 0px 0px 65px 0px;
-            }
-            .theme_description_block{
-                min-width: 500px;
-                position: absolute;
-                top: 10%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-10%);
-                @media screen and (max-width: $PC1025) {
-                    position: relative;
-                    min-width: inherit;
-                    width: 400px;
+            position: initial;
+            top: initial;
+            transform: initial;
+        }
+        .theme_Innerbox {
+            display: flex;
+            .sybmiote_img {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                img {
+                    max-width: 381px;  
                 }
                 @media screen and (max-width: $PC1023) {
-                    width: 100%;
-                }       
-                .description_title {
-                    color: $red;
-                    font-size: 28px;
-                    font-weight: bold;
-                    padding: 65px 0px 30px 0px;
-                    letter-spacing: 3px;
-                    @media screen and (max-width: $PC1023) {
-                       font-size: 21px;
-                    }
-                    &::after {
-                        content: " ";
-                        position: absolute;
-                        background-color: $red;
-                        width: 30px;
-                        height: 40px;
-                        transform: translateX(430px) translateY(-50px);
-                        @media screen and (max-width: $PC1025) {
-                            display: none;
-                        } 
-                        @media screen and (max-width: $PC1023) {
-                            display: none;
-                        }
-                    }
-                    &::before {
-                        content: " ";
-                        position: absolute;
-                        background-color: $blue;
-                        width: 20px;
-                        height: 45px;
-                        transform: translateX(540px) translateY(-20px);  
-                        @media screen and (max-width: $PC1025) {
-                            display: none;
-                        }
-                        @media screen and (max-width: $PC1023) {
-                            display: none;
-                        }                  
-                    }
+                    display: none;
                 }
-                .description_body {
-                    font-size: 14px;
-                    font-style: normal;
-                    font-stretch: normal;
-                    line-height: 2em;
-                    letter-spacing: 1px;
-                    text-align: justify;
-                    color: #ffffff;
-                    &::after {
-                        content: " ";
-                        position: absolute;
-                        border-bottom: 3px solid #5594c3;
-                        width: 200px;
-                        margin-top: 55px;
+            }            
+            .theme_description {
+                width: 50%;
+                display: flex;
+                align-items: center; 
+                @media screen and (max-width: $PC1023) {
+                    width: 100%;
+                }
+                .theme_description_block{
+                    max-width: 480px;
+                    min-height: 350px;
+                    @media screen and (max-width: $PC1023) {
+                        max-width: 100%
+                    }     
+                    .description_title {
+                        color: $red;
+                        font-size: 28px;
+                        font-weight: bold;
+                        padding: 65px 0px 30px 0px;
+                        letter-spacing: 3px;
                         @media screen and (max-width: $PC1023) {
-                            display: none;
+                        font-size: 21px;
+                        }
+                        &::after {
+                            content: " ";
+                            position: absolute;
+                            background-color: $red;
+                            width: 30px;
+                            height: 40px;
+                            transform: translateX(430px) translateY(-50px);
+                            @media screen and (max-width: $PC1025) {
+                                display: none;
+                            } 
+                            @media screen and (max-width: $PC1023) {
+                                display: none;
+                            }
+                        }
+                        &::before {
+                            content: " ";
+                            position: absolute;
+                            background-color: $blue;
+                            width: 20px;
+                            height: 45px;
+                            transform: translateX(540px) translateY(-20px);  
+                            @media screen and (max-width: $PC1025) {
+                                display: none;
+                            }
+                            @media screen and (max-width: $PC1023) {
+                                display: none;
+                            }                  
                         }
                     }
-                    p:nth-child(2) {
-                        margin-top: 20px;
-                    }
-                }                
-            }
+                    .description_body {
+                        font-size: 14px;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 2em;
+                        letter-spacing: 1px;
+                        text-align: justify;
+                        color: #ffffff;
+                        &::after {
+                            content: " ";
+                            position: absolute;
+                            border-bottom: 3px solid #5594c3;
+                            width: 200px;
+                            margin-top: 55px;
+                            @media screen and (max-width: $PC1023) {
+                                display: none;
+                            }
+                        }
+                        p:nth-child(2) {
+                            margin-top: 20px;
+                        }
+                    }                
+                }
 
-        }    
+            }              
+        }
+  
     }
 }
 
@@ -826,9 +825,15 @@ header {
     background-image: url(../assets/images/intro-logo.svg);
     background-repeat: no-repeat;
     background-size: 30%;
-    background-position: 80% center;
+    background-position: 80% 60%;
     position: relative;
+    height: 100vh;
+    @media screen and (max-width: $PC1025) {
+        background: none;
+    }
     @media screen and (max-width: $PC1023) {
+        overflow: hidden;
+        height: auto;
         &::before {
             content: " ";
             background: linear-gradient(#34ACD8, #CF3077);
@@ -859,17 +864,17 @@ header {
             height: 200px;
         }       
     }
-    @media screen and (max-width: $PC1023) {
-        background: none;
-        overflow: hidden;
-    }
     .intro_box {
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
-        padding-bottom: 100px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        width: 100%;
+        left: 50%;
         @media screen and (max-width: $PC1023) {
-            flex-direction: column;
+            position: initial;
+            top: initial;
+            transform: initial;
+            left: initial;
         }
     }
     .What_is_HCI {
@@ -888,7 +893,7 @@ header {
             z-index: -1;
             left: -70px;
             top: 40px;
-            @media screen and (max-width: $PC1023) {
+            @media screen and (max-width: $PC1025) {
                 display: none;
             } 
         }
@@ -906,7 +911,7 @@ header {
                 display: none;
             }          
         }
-        @media screen and (max-width: $PC1023) {
+        @media screen and (max-width: $PC1025) {
             width: 100%;
             margin-left: 0%;
             padding: 70px 0px;
@@ -947,7 +952,7 @@ header {
         width: 100%;
     }
     p.content{
-        margin-bottom: 30px;
+        margin-bottom: 3%;
         margin-top: 10px;
     }
 }
@@ -1062,7 +1067,7 @@ header {
                 letter-spacing: 1px;
                 color: $red;
                 @media screen and (max-width: $ipad){
-                    font-size: 23px;                 
+                       font-size: 23px;                 
                 }
                 span {
                     opacity: 1; 
