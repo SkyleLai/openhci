@@ -881,7 +881,7 @@ header {
         width: 41.5%;
         margin-left: 8%;
         height: auto;
-        padding-top: 100px;
+        padding-top: 55px;
         position: relative;
         &::before {
             content: " ";
@@ -892,8 +892,8 @@ header {
             position: absolute;
             z-index: -1;
             left: -70px;
-            top: 40px;
-            @media screen and (max-width: $PC1025) {
+            top: 0px;
+            @media screen and (max-width: $PC1023) {
                 display: none;
             } 
         }
@@ -906,7 +906,7 @@ header {
             position: absolute;
             z-index: -1;
             left: -90px;
-            top: 180px;  
+            top: 140px;  
             @media screen and (max-width: $PC1025) {
                 display: none;
             }          
