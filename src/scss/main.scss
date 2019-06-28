@@ -730,18 +730,18 @@ header {
         .theme_Innerbox {
             display: flex;
             .sybmiote_img {
-                width: 50%;
+                width: 42%;
                 display: flex;
                 justify-content: center;
                 img {
-                    max-width: 381px;  
+                    max-width: 286px;  
                 }
                 @media screen and (max-width: $PC1023) {
                     display: none;
                 }
             }            
             .theme_description {
-                width: 50%;
+                width: 58%;
                 display: flex;
                 align-items: center; 
                 @media screen and (max-width: $PC1023) {
@@ -749,7 +749,7 @@ header {
                 }
                 .theme_description_block{
                     max-width: 480px;
-                    min-height: 350px;
+                    min-height: 410px;
                     @media screen and (max-width: $PC1023) {
                         max-width: 100%
                     }     
@@ -1105,6 +1105,7 @@ header {
             }
             .logo-small {
                 width: calc(100% / 3);
+                margin-bottom: 75px;
                 @media screen and (max-width: 500px) {
                       width: calc(90%);
                       margin-bottom: 40px; 
@@ -1192,7 +1193,7 @@ footer {
             padding: 5px 0px;
         }
         @media screen and (max-width: $ipad) {
-            flex-direction: column-reverse;
+            flex-direction: column;
             padding: 5px 0px;
         }
      }
