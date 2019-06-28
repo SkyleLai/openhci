@@ -735,6 +735,7 @@ header {
                 justify-content: center;
                 img {
                     max-width: 286px;  
+                    height: 100%;
                 }
                 @media screen and (max-width: $PC1023) {
                     display: none;
