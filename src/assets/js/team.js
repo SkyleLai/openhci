@@ -9,6 +9,7 @@ const raw = `不顯示,僅顯示英文,,姓名,學校,系所,指導教授
 ,,,陳語芟,國立臺北教育大學,玩具與遊戲設計研究所,范丙林/俞齊山
 策展,Curator,2,葉雅昀,國立臺北教育大學,藝術與造型設計學系,
 ,,,蔡依庭,淡江大學,資訊與圖書館學研究所,賴玲玲
+,,,吳姿華,國立臺北教育大學,藝術與造型設計學系,
 技術,Tech Studio,4,蕭伊涵,國立政治大學,資訊科學系,
 ,,,王鴻鈞,國立清華大學,資訊工程學系,朱宏國
 ,,,王科鈞,國立清華大學,資訊工程學系,朱宏國
@@ -53,14 +54,14 @@ TA長,TA Team / Tech,8,翁健豪,國立政治大學,資訊管理研究所,郁方
 技術,,,楊信之,國立臺灣科技大學,電機工程研究所,`;
 
 const team = [];
-let lastGroupName = "";
+let lastGroupName = '';
 let lastGroupIndex = -1;
 raw
-  .split("\n")
+  .split('\n')
   .slice(1)
   .forEach(value => {
-    const crew = value.split(",");
-    if (crew[1] !== lastGroupName && crew[1] !== "") {
+    const crew = value.split(',');
+    if (crew[1] !== lastGroupName && crew[1] !== '') {
       lastGroupName = crew[1];
       lastGroupIndex++;
       team.push({
@@ -86,11 +87,11 @@ raw
 
 const groups = [];
 team.forEach(({ groupName, crews }, groupIndex) => {
-  let teamGroupCrews = "";
+  let teamGroupCrews = '';
   const l = groupName.length * 23;
   crews.forEach(({ name, school, dept, teacher }, index) => {
     if (index % 4 === 0) {
-      if (teamGroupCrews !== "") {
+      if (teamGroupCrews !== '') {
         groups.push(`
           <div class="team-group group-${groupIndex}">
             <div class="team-group-name" style="width: ${l}px; top: ${l}px;">
@@ -107,7 +108,7 @@ team.forEach(({ groupName, crews }, groupIndex) => {
           <span class="large-body">${name}</span><br />
           ${school}<br />
           ${dept}<br />
-          ${teacher !== "" ? `指導教授 ${teacher}` : ""}
+          ${teacher !== '' ? `指導教授 ${teacher}` : ''}
         </div>
       `;
     } else {
@@ -116,7 +117,7 @@ team.forEach(({ groupName, crews }, groupIndex) => {
           <span class="large-body">${name}</span><br />
           ${school}<br />
           ${dept}<br />
-          ${teacher !== "" ? `指導教授 ${teacher}` : ""}
+          ${teacher !== '' ? `指導教授 ${teacher}` : ''}
         </div>
       `;
     }
@@ -139,11 +140,11 @@ export const updateTeam = () => {
   let count = 0;
   while (w >= bp[count]) count++;
 
-  $(".carousel-inner").empty();
-  $(".carousel-indicators").empty();
+  $('.carousel-inner').empty();
+  $('.carousel-indicators').empty();
   const p = Math.ceil(groups.length / count);
   for (let i = 0; i < p; i++) {
-    let groupsHTML = "";
+    let groupsHTML = '';
     for (let j = 0; j < count && i * count + j < groups.length; j++)
       groupsHTML += groups[i * count + j];
     $(`
@@ -152,16 +153,16 @@ export const updateTeam = () => {
           ${groupsHTML}
         </div>
       </div>
-    `).appendTo("#team .carousel-inner");
+    `).appendTo('#team .carousel-inner');
     $(`<li data-target="#team-carousel" data-slide-to="${i}"></li>`).appendTo(
-      "#team .carousel-indicators"
+      '#team .carousel-indicators'
     );
   }
-  $("#team .carousel-item")
+  $('#team .carousel-item')
     .first()
-    .addClass("active");
-  $("#team .carousel-indicators li")
+    .addClass('active');
+  $('#team .carousel-indicators li')
     .first()
-    .addClass("active");
-  $("#carousel").carousel();
+    .addClass('active');
+  $('#carousel').carousel();
 };
